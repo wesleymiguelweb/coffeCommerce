@@ -54,7 +54,7 @@ Todo o estado do carrinho e o tema escolhido sobrevivem a recarregamentos. Não 
 - **Tela de sucesso** — snapshot do pedido, distância, janela de entrega, status/transação, cartão mascarado e confete.
 - **Estados vazios** — checkout sem itens e `/success` acessada sem pedido.
 - **Tema claro/escuro** — persistido, com preferência do sistema e aplicação antes do primeiro paint.
-- **Efeitos de UI em Tailwind CSS v4** — header com sombra ao rolar, hover/foco com transição, **halo pulsante no hero**, **glow nos botões** e sweep de brilho nas CTAs, além de animações de entrada/toast/confete e `prefers-reduced-motion`.
+- **Efeitos de UI em Tailwind CSS v4** — header com sombra ao rolar, hover/foco com transição, halo local no hero, animações de entrada/toast/confete e `prefers-reduced-motion`.
 - **Acessibilidade** — skip link, landmarks, foco visível, labels, `aria-label`, `aria-live`, contraste AA e alvos de toque de 44px.
   - Exceções documentadas (fidelidade ao Figma): `--text-label` `#8D8686` (3,05–3,57:1) e CTA amarelo com rótulo branco (`#FFFFFF`/`#DBAC2C`); a suíte a11y isola apenas esses dois pares na regra `color-contrast`.
 - **Responsividade** — validada em 320, 375, 768 e 1280+ sem scroll horizontal.

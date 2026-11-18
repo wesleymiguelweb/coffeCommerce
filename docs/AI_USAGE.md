@@ -174,7 +174,7 @@ Com os quadros oficiais de estilo e o próprio arquivo do Figma em mãos (18/11/
 **Lote 4 (efeitos em Tailwind CSS)**
 
 - Instalado **Tailwind CSS 4** com `@tailwindcss/vite`; o projeto continua usando CSS Modules para layout, cores, tipografia e temas.
-- Um bloco `@theme` em `src/styles/index.css` centraliza apenas tokens de efeito: `--animate-*`, `--ease-fluid`, `--shadow-elev-*` e `--color-brand-*`.
+- Um bloco `@theme` em `src/styles/index.css` centraliza apenas tokens de efeito: `--animate-*`, `--ease-fluid` e `--shadow-elev-*`.
 - Cada módulo que tem efeito passou a usar `@reference ../../styles/index.css` e `@apply` para transições, hover, active, sombras e animações. Os keyframes (`fade-up`, `pop`, `fade-in`, `toast-in`, `spin`, `confetti-fall`) saíram dos módulos e vivem no `@theme`.
 - A intenção foi **trocar a implementação dos efeitos, não o visual**: os 19 testes E2E, os 124 testes unitários e as capturas foram revalidadas após a migração.
 
@@ -190,6 +190,13 @@ Com os quadros oficiais de estilo e o próprio arquivo do Figma em mãos (18/11/
 
 - **Background com cor visível**: o halo do hero foi reforçado (âmbar 32%, lavanda 22% e um terceiro radial creme) e o glow lateral das páginas subiu de 12% para 18%, para que os efeitos apareçam de fato no tema claro.
 - **Miniatura do carrinho**: o fundo amarelo (`--yellow-light`) foi trocado por `--bg-subtle` (`#F3F2F2`), eliminando o quadrado amarelo atrás do PNG do produto.
+
+**Lote 7 (revisão final dos efeitos)**
+
+- O pedido de **glow/brilho** foi aplicado, mas os valores resultantes divergiram do frame Figma.
+- A revisão restaurou o halo do hero (âmbar 0.15 / lavanda 0.09 no claro), o glow lateral (12%), o `drop-shadow` do hero e os efeitos de botão ao estado auditado.
+- Removidos os tokens `--shadow-glow-*`, `--animate-glow-breathe`, `--animate-shine`, os glows de botões, os filtros ativos e o sweep de brilho, restaurando as utilidades originais.
+- A miniatura do carrinho permanece sem fundo amarelo (`--bg-subtle`).
 
 A auditoria foi feita **no próprio Figma view-only dentro do browser**, com zoom no canvas por rueda sintética — o MCP oficial do Figma não ficou disponível na sessão (o bloco `mcpServers` precisava virar `mcp.remote` no `opencode.json` e a sessão exigiria reabrir para os tools aparecerem; a URL fornecida abre em modo de visualização pública). As telas de Dark Mode e mobile do Figma não existem no arquivo — o dark mode segue a adaptação do projeto.
 

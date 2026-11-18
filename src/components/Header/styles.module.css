@@ -62,13 +62,12 @@
   border-radius: 0.9rem;
   background: var(--yellow-light);
   color: var(--yellow-text);
-  @apply transition-[background-color,color,transform,box-shadow] duration-[140ms];
+  @apply transition-[background-color,color,transform] duration-[140ms];
 }
 
 .cart:hover {
   background: var(--yellow);
   color: #272221;
-  @apply shadow-glow-gold;
 }
 
 .cart:active {

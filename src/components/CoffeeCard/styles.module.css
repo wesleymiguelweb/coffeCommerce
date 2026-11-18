@@ -109,12 +109,11 @@
   border-radius: 0.5rem;
   background: var(--purple-solid);
   color: var(--on-purple-solid);
-  @apply transition-[background-color,transform,box-shadow] duration-[140ms];
+  @apply transition-[background-color,transform] duration-[140ms];
 }
 
 .addButton:hover {
   background: var(--purple);
-  @apply shadow-glow-purple;
 }
 
 .addButton:active {
@@ -128,7 +127,6 @@
 
 .added:hover {
   background: var(--success);
-  @apply shadow-none;
 }
 
 @media (max-width: 640px), (pointer: coarse) {
