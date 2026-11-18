@@ -1,0 +1,122 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.scrolled {
+  background: color-mix(in srgb, var(--bg-page) 92%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom-color: color-mix(
+    in srgb,
+    var(--border-color) 70%,
+    transparent
+  );
+  box-shadow: var(--shadow-sm);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: var(--header-height);
+}
+
+.brand {
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  height: 2.75rem;
+  padding: 0 0.9rem;
+  border-radius: var(--radius-pill);
+  background: var(--purple-light);
+  color: var(--purple-dark);
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.cart {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.9rem;
+  background: var(--yellow-light);
+  color: var(--yellow-text);
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.cart:hover {
+  background: var(--yellow);
+  color: #272221;
+}
+
+.cart:active {
+  transform: scale(0.94);
+}
+
+.badge {
+  position: absolute;
+  top: -0.3rem;
+  right: -0.35rem;
+  display: grid;
+  place-items: center;
+  min-width: 1.4rem;
+  height: 1.4rem;
+  padding: 0 0.3rem;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--bg-page);
+  background: var(--yellow);
+  color: #272221;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  animation: pop 260ms ease-out;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 640px) {
+  .actions {
+    gap: 0.5rem;
+  }
+
+  .location {
+    height: 2.75rem;
+    padding: 0 0.9rem;
+  }
+
+  .cart {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
+
+@media (max-width: 440px) {
+  .location {
+    display: none;
+  }
+}

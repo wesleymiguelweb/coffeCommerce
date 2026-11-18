@@ -1,0 +1,161 @@
+/*
+ * Figma card: flat base-card #F3F2F2, asymmetric 6px/36px radius,
+ * no border, no shadow, no ring or gradient behind the coffee photo.
+ */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-subtle);
+  border: 0;
+  border-radius: 6px 36px 6px 36px;
+  box-shadow: none;
+  text-align: center;
+  animation: fade-up 520ms var(--transition-slow) both;
+}
+
+.art {
+  display: grid;
+  place-items: center;
+  height: 7rem;
+}
+
+.image {
+  width: 7rem;
+  height: 7rem;
+  object-fit: contain;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 0 1.5rem 1.25rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  padding: 0.22rem 0.55rem;
+  border-radius: var(--radius-pill);
+  background: var(--yellow-light);
+  color: var(--yellow-text);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  flex: 1;
+  font-size: 0.875rem;
+  line-height: 1.3;
+  color: var(--text-label);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.price {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.2rem;
+  color: var(--text-subtitle);
+  font-family: var(--font-display);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.currency {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-base);
+}
+
+.amount {
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.addButton {
+  display: inline-grid;
+  place-items: center;
+  width: 2.375rem;
+  height: 2.375rem;
+  border-radius: 0.5rem;
+  background: var(--purple-solid);
+  color: var(--on-purple-solid);
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.addButton:hover {
+  background: var(--purple);
+}
+
+.addButton:active {
+  transform: scale(0.94);
+}
+
+.added {
+  background: var(--success);
+  box-shadow: none;
+}
+
+.added:hover {
+  background: var(--success);
+}
+
+@media (max-width: 640px), (pointer: coarse) {
+  .addButton {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .body {
+    padding-inline: 0.9rem;
+  }
+
+  .footer {
+    gap: 0.35rem;
+  }
+
+  .amount {
+    font-size: 1.3rem;
+  }
+
+  .actions {
+    gap: 0.3rem;
+  }
+
+  .addButton {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}

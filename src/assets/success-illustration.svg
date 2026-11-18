@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 340" fill="none" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="success-cup" x1="110" y1="150" x2="220" y2="280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" />
+      <stop offset="1" stop-color="#F4E7D6" />
+    </linearGradient>
+    <style>
+      @keyframes success-float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+      }
+      .success-float { animation: success-float 6s ease-in-out infinite; transform-origin: center; }
+      .success-float.d2 { animation-delay: 1.8s; }
+      @media (prefers-reduced-motion: reduce) { .success-float { animation: none; } }
+    </style>
+  </defs>
+
+  <circle cx="210" cy="170" r="150" fill="#F1E9C9" />
+  <circle cx="210" cy="170" r="168" stroke="#8047F8" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="2 12" opacity=".4" />
+
+  <path d="M62 286c62-18 74-104 142-130 44-17 78-2 112 24" stroke="#8047F8" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 12" opacity=".55" />
+
+  <ellipse cx="152" cy="284" rx="62" ry="10" fill="#3B2A1E" opacity=".1" />
+  <g transform="rotate(-7 152 214)">
+    <path d="M104 180h96l-11 84c-1.6 12-10 18-22 18h-30c-12 0-20.4-6-22-18l-11-84Z" fill="url(#success-cup)" />
+    <path d="M112 216h80l-5 38h-70l-5-38Z" fill="#DBAC2C" />
+    <path d="M112 216h80l-.8 7h-78.4l-.8-7Z" fill="#F0C75E" opacity=".7" />
+    <circle cx="152" cy="239" r="14" fill="#FFF8EE" />
+    <ellipse cx="152" cy="240" rx="4.2" ry="5.6" transform="rotate(24 152 240)" fill="#4B2995" />
+    <rect x="96" y="166" width="112" height="24" rx="12" fill="#4B2995" />
+    <ellipse cx="152" cy="166" rx="56" ry="10" fill="#6A44C0" />
+    <rect x="136" y="158" width="32" height="7" rx="3.5" fill="#2F1A5C" />
+    <path d="M132 154c-7-11 7-16 1-27M160 150c-6-9 6-14 1-24" stroke="#B79CFF" stroke-width="4" stroke-linecap="round" opacity=".8" />
+  </g>
+
+  <g class="success-float">
+    <circle cx="298" cy="118" r="54" fill="#DBAC2C" />
+    <circle cx="298" cy="118" r="45" fill="#F0C75E" opacity=".45" />
+    <path d="M274 118l16 16 32-34" stroke="#272221" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <g class="success-float d2">
+    <path d="M320 260c0-26 22-42 42-42s42 16 42 42c0 32-42 62-42 62s-42-30-42-62Z" fill="#4B2995" />
+    <circle cx="362" cy="258" r="14" fill="#F1E9C9" />
+    <circle cx="362" cy="258" r="6" fill="#DBAC2C" />
+  </g>
+
+  <g transform="rotate(-24 88 130)">
+    <ellipse cx="88" cy="130" rx="10" ry="15" fill="#6B4226" />
+    <path d="M88 118c-4 7-4 17 0 24" stroke="#F1E9C9" stroke-width="2.4" stroke-linecap="round" />
+  </g>
+  <g transform="rotate(26 260 300)">
+    <ellipse cx="260" cy="300" rx="9" ry="13" fill="#8047F8" opacity=".8" />
+    <path d="M260 290c-4 6-4 14 0 20" stroke="#F1E9C9" stroke-width="2.2" stroke-linecap="round" />
+  </g>
+
+  <path d="M88 62l3 8 8 3-8 3-3 8-3-8-8-3 8-3 3-8Z" fill="#8047F8" opacity=".7" />
+  <path d="M360 38l3 8 8 3-8 3-3 8-3-8-8-3 8-3 3-8Z" fill="#DBAC2C" />
+  <circle cx="60" cy="230" r="4" fill="#DBAC2C" opacity=".7" />
+  <circle cx="332" cy="306" r="4" fill="#8047F8" opacity=".5" />
+</svg>

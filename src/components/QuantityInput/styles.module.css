@@ -1,0 +1,96 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  height: 2.375rem;
+  padding: 0.25rem;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--bg-button);
+}
+
+.button {
+  display: inline-grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.25rem;
+  color: var(--purple);
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.button:hover:not(:disabled) {
+  background: var(--purple-light);
+  color: var(--purple-dark);
+}
+
+.button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.value {
+  min-width: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-title);
+  font-variant-numeric: tabular-nums;
+}
+
+.small {
+  height: 2.375rem;
+  padding: 0.25rem;
+}
+
+.small .button {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.small .value {
+  min-width: 1rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 640px), (pointer: coarse) {
+  .root {
+    height: 3.25rem;
+  }
+
+  .button {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .small {
+    height: 3.25rem;
+  }
+
+  .small .button {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .small .value {
+    min-width: 1.5rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .root {
+    height: 3.25rem;
+  }
+
+  .button {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .value {
+    min-width: 1.35rem;
+    font-size: 0.9375rem;
+  }
+}

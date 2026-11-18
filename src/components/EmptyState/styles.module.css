@@ -1,0 +1,63 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 30rem;
+  margin: clamp(2.5rem, 8vw, 5rem) auto;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  animation: fade-up 480ms var(--transition-slow) both;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 1.25rem;
+  border-radius: 50%;
+  background: var(--yellow-light);
+  color: var(--yellow-text);
+}
+
+.title {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  margin-bottom: 0.6rem;
+}
+
+.description {
+  color: var(--text-label);
+  margin-bottom: 1.75rem;
+  max-width: 36ch;
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0 1.75rem;
+  border-radius: var(--radius-md);
+  background: var(--yellow);
+  /* Figma: rótulo branco sobre amarelo (exceção AA documentada no e2e/a11y). */
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.action:hover {
+  background: var(--yellow-dark);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-brand);
+}

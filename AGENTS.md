@@ -11,11 +11,13 @@ O **Coffee Delivery** é uma aplicação web de e-commerce desenvolvida como pro
 - Seleção de quantidade e adição ao carrinho com acúmulo de produtos repetidos.
 - Gerenciamento reativo do carrinho de compras com persistência no `localStorage`.
 - Checkout com preenchimento automático de endereço via API pública do **ViaCEP** e validação com **Zod**.
-- Seleção de método de pagamento (informativo, sem transação financeira real).
+- Cálculo de **taxa de entrega e previsão por distância real** até a cafeteria (BrasilAPI/Nominatim + Haversine).
+- Pagamento **simulado localmente** (crédito, débito, PIX e dinheiro), sem gateway ou transação financeira real.
 - Emissão de confirmação de pedido na tela `/success` com preservação de snapshot do pedido.
 - Alternância de tema **Light / Dark** com persistência.
 - Responsividade total para dispositivos móveis (320px, 375px, 768px, 1280px+).
-- Identidade visual autoral gerada com Inteligência Artificial.
+- Identidade visual autoral com logo vetorial e PNGs de café fornecidos no projeto.
+- Cobertura E2E com **Playwright + axe-core**.
 
 ---
 
@@ -45,7 +47,9 @@ Antes de sugerir qualquer alteração no código ou criar novos arquivos, o assi
 - **Sem atalhos**: É expressamente proibido o uso de `any`, `@ts-ignore` injustificado ou cast forçado (`as unknown as T`).
 - **Componentes desacoplados**: Componentes devem possuir responsabilidade única, interfaces explícitas de Props e tipagem em arquivos dedicados.
 - **Imutabilidade**: Todas as mutações no estado global do carrinho devem ocorrer exclusivamente através de despachos (`dispatch`) de ações no `useReducer`, utilizando métodos imutáveis (`map`, `filter`, `concat`).
-- **Nenhum valor mágico (Magic Numbers)**: Preços, taxas de frete (ex: `DELIVERY_FEE_IN_CENTS = 350`) e chaves de `localStorage` devem ser constantes centralizadas.
+- **Nenhum valor mágico (Magic Numbers)**: Preços, faixas de frete (`DELIVERY_FEE_TIERS`), tempos de entrega, coordenadas da loja e chaves de `localStorage` devem ser constantes centralizadas.
+- **Domínio puro**: Cálculos de distância, taxa, ETA, Luhn e formatação devem viver em `utils`/`services` testáveis, não em componentes.
+- **Privacidade**: Nunca persistir número completo de cartão, CVV ou dados pessoais além do necessário para o snapshot do pedido.
 
 ### 3.3 Acessibilidade e Responsividade
 - Toda imagem deve conter `alt` descritivo.
@@ -53,6 +57,10 @@ Antes de sugerir qualquer alteração no código ou criar novos arquivos, o assi
 - Formulários devem possuir labels semanticamente associados aos inputs via `htmlFor`/`id`.
 - O layout deve ser Mobile-First, sem quebras ou scroll horizontal em telas a partir de 320px de largura.
 - Alto contraste e foco visível garantidos nos modos Claro e Escuro.
+- **Exceções documentadas (decisão do desenvolvedor, 18/11/2026):** fidelidade ao Figma —
+  1. `--text-label` usa `#8D8686` (`base-label` do Figma), contraste 3,05–3,57:1;
+  2. o CTA amarelo usa rótulo `#FFFFFF` sobre `#DBAC2C` (2,1:1, o mesmo par do botão primário do Figma).
+  A suíte E2E isola exatamente esses dois pares na regra `color-contrast` (demais elementos continuam reprovando). Não usar `--text-label` em texto de conteúdo primário.
 
 ---
 

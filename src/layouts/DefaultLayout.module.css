@@ -1,0 +1,14 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.main {
+  flex: 1;
+  outline: none;
+}
+
+.route {
+  animation: fade-up 420ms var(--transition-slow) both;
+}

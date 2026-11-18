@@ -1,0 +1,332 @@
+.page {
+  padding-block: clamp(2.5rem, 5vw, 4rem) clamp(3.5rem, 7vw, 5.5rem);
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  margin-bottom: clamp(2.25rem, 4vw, 3.25rem);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  animation: fade-up 520ms var(--transition-slow) both;
+}
+
+.title {
+  /* Figma: título em amarelo-escuro (yellow-dark), contraste AA grande em qualquer tema. */
+  color: var(--yellow-dark);
+  font-size: clamp(2.2rem, 4vw, 3.1rem);
+  letter-spacing: -0.035em;
+  margin-bottom: 0.7rem;
+}
+
+.subtitle {
+  max-width: 38rem;
+  color: var(--text-label);
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  line-height: 1.6;
+}
+
+.orderMeta {
+  margin-top: 1.2rem;
+  color: var(--text-label);
+  font-size: 0.8125rem;
+}
+
+.orderMeta strong {
+  color: var(--text-subtitle);
+}
+
+.illustration {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  animation: fade-up 620ms 100ms var(--transition-slow) both;
+}
+
+.illustration img {
+  width: min(100%, 24rem);
+  height: auto;
+  filter: drop-shadow(0 22px 32px rgba(75, 41, 149, 0.1));
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(18rem, 0.92fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: clamp(1.35rem, 3vw, 2rem);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-xs);
+  animation: fade-up 540ms 80ms var(--transition-slow) both;
+}
+
+.infoRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.infoRow + .infoRow {
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.infoIcon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+.purple {
+  background: var(--purple-light);
+  color: var(--purple-dark);
+}
+
+.yellow {
+  background: var(--yellow-light);
+  color: var(--yellow-text);
+}
+
+.green {
+  background: var(--success-soft);
+  color: var(--success);
+}
+
+.infoLabel {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--text-label);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.infoValue {
+  display: block;
+  color: var(--text-title);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.infoText {
+  margin-top: 0.15rem;
+  color: var(--text-label);
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.orderCard {
+  padding: clamp(1.35rem, 3vw, 1.85rem);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-sm);
+  animation: fade-up 540ms 160ms var(--transition-slow) both;
+}
+
+.orderHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.15rem;
+}
+
+.orderTitle {
+  font-size: 1.15rem;
+}
+
+.orderCode {
+  padding: 0.25rem 0.55rem;
+  border-radius: var(--radius-pill);
+  background: var(--bg-subtle);
+  color: var(--text-label);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.orderItems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.orderItem {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--text-base);
+  font-size: 0.875rem;
+}
+
+.orderItem span:first-child {
+  min-width: 0;
+}
+
+.orderItem strong {
+  color: var(--purple-dark);
+  margin-right: 0.15rem;
+}
+
+.orderItem span:last-child {
+  white-space: nowrap;
+  font-weight: 700;
+  color: var(--text-title);
+  font-variant-numeric: tabular-nums;
+}
+
+.orderTotals {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-top: 1.15rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.orderTotals > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.8125rem;
+}
+
+.orderTotals dt {
+  color: var(--text-label);
+}
+
+.orderTotals dd {
+  margin: 0;
+  font-weight: 700;
+  color: var(--text-title);
+  font-variant-numeric: tabular-nums;
+}
+
+.orderGrandTotal {
+  margin-top: 0.2rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-color);
+  font-family: var(--font-display);
+  font-size: 1rem;
+}
+
+.orderGrandTotal dt {
+  color: var(--text-title) !important;
+  font-weight: 800;
+}
+
+.orderGrandTotal dd {
+  font-size: 1.3rem;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  width: 100%;
+  min-height: 3rem;
+  margin-top: 1.35rem;
+  border-radius: var(--radius-md);
+  background: var(--yellow);
+  /* Figma: rótulo branco sobre amarelo (exceção AA documentada no e2e/a11y). */
+  color: #ffffff;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.cta:hover {
+  background: var(--yellow-dark);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-brand);
+}
+
+.confetti {
+  position: absolute;
+  inset: -1rem 0 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.confettiPiece {
+  position: absolute;
+  top: -0.75rem;
+  width: 0.5rem;
+  height: 0.85rem;
+  border-radius: 2px;
+  opacity: 0;
+  animation-name: confetti-fall;
+  animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+  animation-fill-mode: forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -1rem, 0) rotate(0deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 24rem, 0) rotate(540deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .illustration img {
+    width: min(100%, 20rem);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    gap: 1.75rem;
+  }
+
+  .orderHeader {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+}
