@@ -12,7 +12,7 @@
   width: 4.5rem;
   height: 4.5rem;
   border-radius: var(--radius-lg);
-  background: var(--yellow-light);
+  background: var(--bg-subtle);
   overflow: hidden;
 }
 

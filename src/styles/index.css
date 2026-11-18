@@ -392,7 +392,7 @@ legend {
   left: 0;
   background: linear-gradient(
     90deg,
-    color-mix(in srgb, var(--purple) 12%, transparent),
+    color-mix(in srgb, var(--purple) 18%, transparent),
     transparent
   );
 }
@@ -401,7 +401,7 @@ legend {
   right: 0;
   background: linear-gradient(
     -90deg,
-    color-mix(in srgb, var(--purple) 12%, transparent),
+    color-mix(in srgb, var(--purple) 18%, transparent),
     transparent
   );
 }

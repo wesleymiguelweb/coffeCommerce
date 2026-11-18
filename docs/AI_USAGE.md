@@ -186,6 +186,11 @@ Com os quadros oficiais de estilo e o próprio arquivo do Figma em mãos (18/11/
 - Brilho: sweep diagonal `shine` (900 ms) nas CTAs primárias (checkout, sucesso e estados vazios), via `::after` e `@apply animate-shine`.
 - `prefers-reduced-motion` continua neutralizando todas as animações. Este lote é uma adaptação documentada: o frame do Figma não traz glow nos botões.
 
+**Lote 6 (correções apontadas nos prints finais)**
+
+- **Background com cor visível**: o halo do hero foi reforçado (âmbar 32%, lavanda 22% e um terceiro radial creme) e o glow lateral das páginas subiu de 12% para 18%, para que os efeitos apareçam de fato no tema claro.
+- **Miniatura do carrinho**: o fundo amarelo (`--yellow-light`) foi trocado por `--bg-subtle` (`#F3F2F2`), eliminando o quadrado amarelo atrás do PNG do produto.
+
 A auditoria foi feita **no próprio Figma view-only dentro do browser**, com zoom no canvas por rueda sintética — o MCP oficial do Figma não ficou disponível na sessão (o bloco `mcpServers` precisava virar `mcp.remote` no `opencode.json` e a sessão exigiria reabrir para os tools aparecerem; a URL fornecida abre em modo de visualização pública). As telas de Dark Mode e mobile do Figma não existem no arquivo — o dark mode segue a adaptação do projeto.
 
 Reversões conhecidas: trocar `--text-label` e a cor do CTA; remover os filtros do helper de a11y; reaplicar o gradiente areia de página inteira ou o anel tracejado nos cards; nenhuma mudança estrutural.
