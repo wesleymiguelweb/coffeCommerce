@@ -1,3 +1,4 @@
+@reference "../../styles/index.css";
 /*
  * Figma card: flat base-card #F3F2F2, asymmetric 6px/36px radius,
  * no border, no shadow, no ring or gradient behind the coffee photo.
@@ -11,7 +12,7 @@
   border-radius: 6px 36px 6px 36px;
   box-shadow: none;
   text-align: center;
-  animation: fade-up 520ms var(--transition-slow) both;
+  @apply animate-fade-up-card;
 }
 
 .art {
@@ -108,9 +109,7 @@
   border-radius: 0.5rem;
   background: var(--purple-solid);
   color: var(--on-purple-solid);
-  transition:
-    background-color var(--transition-fast),
-    transform var(--transition-fast);
+  @apply transition-[background-color,transform] duration-[140ms];
 }
 
 .addButton:hover {
@@ -118,7 +117,7 @@
 }
 
 .addButton:active {
-  transform: scale(0.94);
+  @apply scale-[0.94];
 }
 
 .added {

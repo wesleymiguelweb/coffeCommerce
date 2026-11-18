@@ -1,3 +1,4 @@
+@reference "../../styles/index.css";
 .item {
   display: grid;
   grid-template-columns: 4.5rem 1fr;
@@ -68,9 +69,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  transition:
-    background-color var(--transition-fast),
-    color var(--transition-fast);
+  @apply transition-colors duration-[140ms];
 }
 
 .remove:hover {

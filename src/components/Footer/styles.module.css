@@ -1,3 +1,4 @@
+@reference "../../styles/index.css";
 .footer {
   margin-top: auto;
   border-top: 1px solid var(--border-color);
@@ -53,7 +54,7 @@
   font-size: 0.8rem;
   font-weight: 500;
   line-height: 1.45;
-  transition: color var(--transition-fast);
+  @apply transition-colors duration-[140ms];
 }
 
 .storeAddress:hover {

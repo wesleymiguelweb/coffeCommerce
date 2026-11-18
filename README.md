@@ -54,7 +54,7 @@ Todo o estado do carrinho e o tema escolhido sobrevivem a recarregamentos. Não 
 - **Tela de sucesso** — snapshot do pedido, distância, janela de entrega, status/transação, cartão mascarado e confete.
 - **Estados vazios** — checkout sem itens e `/success` acessada sem pedido.
 - **Tema claro/escuro** — persistido, com preferência do sistema e aplicação antes do primeiro paint.
-- **Efeitos de UI** — header com sombra ao rolar, hover elevado nos cards, transição de rota e `prefers-reduced-motion`.
+- **Efeitos de UI em Tailwind CSS v4** — header com sombra ao rolar, hover/foco com transição, animações de entrada/toast/confete e `prefers-reduced-motion`.
 - **Acessibilidade** — skip link, landmarks, foco visível, labels, `aria-label`, `aria-live`, contraste AA e alvos de toque de 44px.
   - Exceções documentadas (fidelidade ao Figma): `--text-label` `#8D8686` (3,05–3,57:1) e CTA amarelo com rótulo branco (`#FFFFFF`/`#DBAC2C`); a suíte a11y isola apenas esses dois pares na regra `color-contrast`.
 - **Responsividade** — validada em 320, 375, 768 e 1280+ sem scroll horizontal.
@@ -114,6 +114,7 @@ Todo o estado do carrinho e o tema escolhido sobrevivem a recarregamentos. Não 
 | Camada | Tecnologia | Por quê |
 |---|---|---|
 | UI | **React 19** | Componentes funcionais, Hooks e composição. |
+| Estilos | **CSS Modules + Tailwind CSS 4** | Layout/cores nos módulos; efeitos (hover, transições, sombras, animações) via utilities e tokens Tailwind. |
 | Linguagem | **TypeScript 7 (strict)** | Sem `any`, sem casts inseguros; contratos explícitos. |
 | Build | **Vite 8** | Dev server rápido e build otimizado. |
 | Rotas | **React Router 7** | SPA com histórico do navegador. |

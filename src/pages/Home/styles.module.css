@@ -1,3 +1,4 @@
+@reference "../../styles/index.css";
 /*
  * Figma reference: the Home page is flat #FAFAFA from the header to the
  * catalog. The only decorative wash is a soft warm/lavender aura around
@@ -57,7 +58,7 @@
 
 .heroContent {
   max-width: 37rem;
-  animation: fade-up 620ms var(--transition-slow) both;
+  @apply animate-fade-up-hero;
 }
 
 .heroTitle {
@@ -132,7 +133,7 @@
 .heroArt {
   display: flex;
   justify-content: center;
-  animation: fade-up 700ms 100ms var(--transition-slow) both;
+  @apply animate-fade-up-grid;
 }
 
 .heroImage {
@@ -188,17 +189,13 @@
   font-weight: 700;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  transition:
-    background-color var(--transition-fast),
-    color var(--transition-fast),
-    border-color var(--transition-fast),
-    transform var(--transition-fast);
+  @apply transition-[background-color,color,border-color,transform] duration-[140ms];
 }
 
 .filter:hover {
   border-color: var(--purple);
   color: var(--purple-dark);
-  transform: translateY(-1px);
+  @apply -translate-y-px;
 }
 
 .filterActive,

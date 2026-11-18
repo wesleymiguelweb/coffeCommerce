@@ -1,3 +1,4 @@
+@reference "../../styles/index.css";
 .logo {
   display: inline-flex;
   align-items: center;
@@ -10,11 +11,11 @@
   width: 2.25rem;
   height: 2.25rem;
   flex-shrink: 0;
-  transition: transform var(--transition-base);
+  @apply transition-transform duration-[220ms];
 }
 
 .logo:hover .mark {
-  transform: rotate(-8deg) scale(1.05);
+  @apply -rotate-8 scale-105;
 }
 
 .wordmark {

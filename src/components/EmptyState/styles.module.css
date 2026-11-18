@@ -1,3 +1,4 @@
+@reference "../../styles/index.css";
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -9,8 +10,7 @@
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-sm);
-  animation: fade-up 480ms var(--transition-slow) both;
+  @apply shadow-elev-sm animate-fade-up-panel;
 }
 
 .icon {
@@ -49,15 +49,11 @@
   text-transform: uppercase;
   font-size: 0.8125rem;
   letter-spacing: 0.04em;
-  transition:
-    background-color var(--transition-fast),
-    transform var(--transition-fast),
-    box-shadow var(--transition-fast);
+  @apply transition-[background-color,transform,box-shadow] duration-[140ms];
 }
 
 .action:hover {
   background: var(--yellow-dark);
   color: #ffffff;
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-brand);
+  @apply -translate-y-px shadow-elev-brand;
 }

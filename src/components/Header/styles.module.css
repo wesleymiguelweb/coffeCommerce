@@ -1,13 +1,11 @@
+@reference "../../styles/index.css";
 .header {
   position: sticky;
   top: 0;
   z-index: 20;
   background: transparent;
   border-bottom: 1px solid transparent;
-  transition:
-    background-color var(--transition-base),
-    border-color var(--transition-base),
-    box-shadow var(--transition-base);
+  @apply transition-[background-color,border-color,box-shadow] duration-[220ms];
 }
 
 .scrolled {
@@ -19,7 +17,7 @@
     var(--border-color) 70%,
     transparent
   );
-  box-shadow: var(--shadow-sm);
+  @apply shadow-elev-sm;
 }
 
 .inner {
@@ -64,10 +62,7 @@
   border-radius: 0.9rem;
   background: var(--yellow-light);
   color: var(--yellow-text);
-  transition:
-    background-color var(--transition-fast),
-    color var(--transition-fast),
-    transform var(--transition-fast);
+  @apply transition-[background-color,color,transform] duration-[140ms];
 }
 
 .cart:hover {
@@ -76,7 +71,7 @@
 }
 
 .cart:active {
-  transform: scale(0.94);
+  @apply scale-[0.94];
 }
 
 .badge {
@@ -95,7 +90,7 @@
   font-size: 0.72rem;
   font-weight: 700;
   line-height: 1;
-  animation: pop 260ms ease-out;
+  @apply animate-pop;
   font-variant-numeric: tabular-nums;
 }
 

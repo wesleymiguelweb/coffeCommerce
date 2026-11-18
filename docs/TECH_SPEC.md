@@ -11,7 +11,8 @@
 | **React Hook Form** | 7.x | Gerenciamento de formulários descontrolados (uncontrolled components) de alto desempenho, eliminando re-renderizações desnecessárias a cada caractere digitado. |
 | **Zod** | 4.x | Biblioteca de declaração e validação de esquemas orientada a TypeScript com inferência estática de tipos. |
 | **@hookform/resolvers** | 7.x | Integração transparente entre os esquemas do Zod e o formulário do React Hook Form. |
-| **CSS Modules + Design Tokens** | CSS nativo | Estilos escopados por componente, temas claro/escuro via variáveis semânticas, zero runtime e nenhuma dependência extra de UI. *(Decisão registrada em `docs/AI_USAGE.md`.)* |
+| **CSS Modules + Design Tokens** | CSS nativo | Estilos escopados por componente, temas claro/escuro via variáveis semânticas e zero runtime. Layout, cores e tipografia permanecem nos módulos para preservar a auditoria do Figma. |
+| **Tailwind CSS** | 4.x | Plugin oficial do Vite; apenas a camada de **efeitos** (hover, foco, transições, sombras e animações) usa utilities/tokens via `@apply` nos módulos. *(Decisão registrada em `docs/AI_USAGE.md`.)* |
 | **Phosphor Icons (@phosphor-icons/react)** | 2.x | Conjunto de ícones usado em todo o projeto (ShoppingCart, MapPin, CreditCard, Bank, PixLogo, Money, Trash, Plus, Minus, Timer, Coffee, Package). |
 | **qrcode.react** | 4.x | Geração local do QR Code do PIX de demonstração, sem chamada externa. |
 | **Vitest + Testing Library** | 5.x | Framework de testes unitários integrado ao Vite para validação de reducers, cálculos financeiros, geolocalização, esquemas Zod, storage e guards. |
@@ -364,6 +365,9 @@ export type CheckoutFormData = z.infer<typeof checkoutFormSchema>
 ## 7. Sistema de Design, Tokens e Dark Mode
 
 ### 7.1 Variáveis CSS e Tokens Semânticos (`src/styles/index.css`)
+
+O arquivo importa Tailwind CSS v4 e declara um bloco `@theme` exclusivo para **efeitos**: `@animate-*` (fade-up, pop, fade-in, toast-in, spin, confetti), `--ease-fluid`, `--shadow-elev-*` e `--color-brand-*`. Os módulos CSS consomem esses tokens com `@apply` e `@reference ../../styles/index.css`, mantendo escopo e tipagem do projeto. Nenhuma cor, espaçamento ou tamanho do Figma foi migrado para utilities.
+
 ```css
 :root {
   /* Marca */

@@ -1,3 +1,4 @@
+@reference "../../styles/index.css";
 .toggle {
   display: inline-grid;
   place-items: center;
@@ -7,11 +8,7 @@
   color: var(--purple-dark);
   background: var(--bg-subtle);
   border: 1px solid transparent;
-  transition:
-    background-color var(--transition-fast),
-    color var(--transition-fast),
-    border-color var(--transition-fast),
-    transform var(--transition-fast);
+  @apply transition-[background-color,color,border-color,transform] duration-[140ms];
 }
 
 .toggle:hover {
@@ -20,7 +17,7 @@
 }
 
 .toggle:active {
-  transform: scale(0.94);
+  @apply scale-[0.94];
 }
 
 @media (max-width: 380px) {

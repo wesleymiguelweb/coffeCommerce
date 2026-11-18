@@ -1,3 +1,116 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------ */
+/*  Tailwind effect tokens — motion and elevation only.                */
+/*  Colors, spacing and typography stay in the CSS Modules below so the */
+/*  audited Figma fidelity is preserved.                                */
+/* ------------------------------------------------------------------ */
+
+@theme {
+  --ease-fluid: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --color-brand-purple: var(--purple);
+  --color-brand-yellow: var(--yellow);
+
+  --shadow-elev-xs: var(--shadow-xs);
+  --shadow-elev-sm: var(--shadow-sm);
+  --shadow-elev-md: var(--shadow-md);
+  --shadow-elev-lg: var(--shadow-lg);
+  --shadow-elev-brand: var(--shadow-brand);
+
+  --animate-fade-up: fade-up 420ms var(--ease-fluid) both;
+  --animate-fade-up-card: fade-up 520ms var(--ease-fluid) both;
+  --animate-fade-up-panel: fade-up 480ms var(--ease-fluid) both;
+  --animate-fade-up-fast: fade-up 380ms var(--ease-fluid) both;
+  --animate-fade-up-grid: fade-up 700ms 100ms var(--ease-fluid) both;
+  --animate-fade-up-hero: fade-up 620ms 100ms var(--ease-fluid) both;
+  --animate-fade-up-success: fade-up 540ms var(--ease-fluid) both;
+  --animate-fade-up-success-card: fade-up 540ms 80ms var(--ease-fluid) both;
+  --animate-fade-up-success-panel: fade-up 540ms 160ms var(--ease-fluid) both;
+  --animate-fade-in: fade-in 220ms ease both;
+  --animate-pop: pop 260ms ease-out;
+  --animate-pop-overlay: pop 320ms var(--ease-fluid) both;
+  --animate-toast-in: toast-in 320ms var(--ease-fluid) both;
+  --animate-spin-slow: spin 0.9s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-confetti: confetti-fall 2.4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pop {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    60% {
+      opacity: 1;
+      transform: scale(1.04);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes toast-in {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 0.75rem, 0) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @keyframes confetti-fall {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, -1rem, 0) rotate(0deg);
+    }
+    10% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translate3d(0, 24rem, 0) rotate(540deg);
+    }
+  }
+}
+
 /* ------------------------------------------------------------------ */
 /*  Design tokens — Coffee Delivery                                    */
 /*  Light is the default; [data-theme='dark'] overrides the neutrals.   */
@@ -138,9 +251,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  transition:
-    background-color var(--transition-base),
-    color var(--transition-base);
+  @apply transition-colors duration-[220ms];
 }
 
 h1,
@@ -288,9 +399,8 @@ legend {
   background: var(--purple-dark);
   color: var(--text-inverse);
   font-weight: 700;
-  box-shadow: var(--shadow-md);
+  @apply shadow-elev-md transition-transform duration-[220ms];
   transform: translate(-50%, -200%);
-  transition: transform var(--transition-base);
 }
 
 [data-theme='dark'] .skip-link {
@@ -299,41 +409,6 @@ legend {
 
 .skip-link:focus-visible {
   transform: translate(-50%, 0);
-}
-
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pop {
-  0% {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-  60% {
-    transform: scale(1.04);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
 }
 
 @media (max-width: 640px) {

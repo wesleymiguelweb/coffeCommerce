@@ -1,3 +1,4 @@
+@reference "../styles/index.css";
 .app {
   display: flex;
   flex-direction: column;
@@ -10,5 +11,5 @@
 }
 
 .route {
-  animation: fade-up 420ms var(--transition-slow) both;
+  @apply animate-fade-up;
 }

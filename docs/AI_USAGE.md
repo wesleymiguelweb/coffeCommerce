@@ -171,6 +171,13 @@ Com os quadros oficiais de estilo e o próprio arquivo do Figma em mãos (18/11/
 - **Hero**: título 48px em duas linhas e subtítulo 16px, como no frame; header transparente no topo, com vidro fosco apenas ao rolar.
 - **Tag**: fundo `#F1E9C9` e texto `#8A5A0C` em vez do `#C47F17` literal, mantendo contraste AA no texto de 10px (adaptação documentada).
 
+**Lote 4 (efeitos em Tailwind CSS)**
+
+- Instalado **Tailwind CSS 4** com `@tailwindcss/vite`; o projeto continua usando CSS Modules para layout, cores, tipografia e temas.
+- Um bloco `@theme` em `src/styles/index.css` centraliza apenas tokens de efeito: `--animate-*`, `--ease-fluid`, `--shadow-elev-*` e `--color-brand-*`.
+- Cada módulo que tem efeito passou a usar `@reference ../../styles/index.css` e `@apply` para transições, hover, active, sombras e animações. Os keyframes (`fade-up`, `pop`, `fade-in`, `toast-in`, `spin`, `confetti-fall`) saíram dos módulos e vivem no `@theme`.
+- A intenção foi **trocar a implementação dos efeitos, não o visual**: os 19 testes E2E, os 124 testes unitários e as capturas foram revalidadas após a migração.
+
 A auditoria foi feita **no próprio Figma view-only dentro do browser**, com zoom no canvas por rueda sintética — o MCP oficial do Figma não ficou disponível na sessão (o bloco `mcpServers` precisava virar `mcp.remote` no `opencode.json` e a sessão exigiria reabrir para os tools aparecerem; a URL fornecida abre em modo de visualização pública). As telas de Dark Mode e mobile do Figma não existem no arquivo — o dark mode segue a adaptação do projeto.
 
 Reversões conhecidas: trocar `--text-label` e a cor do CTA; remover os filtros do helper de a11y; reaplicar o gradiente areia de página inteira ou o anel tracejado nos cards; nenhuma mudança estrutural.
