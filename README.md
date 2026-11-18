@@ -102,6 +102,7 @@ Todo o estado do carrinho e o tema escolhido sobrevivem a recarregamentos. Não 
 
 <p align="center">
   <img src="docs/screenshots/home-mobile-light.jpg" alt="Home no mobile em 375px" width="300" />
+  <img src="docs/screenshots/home-mobile-dark.jpg" alt="Home no mobile em 375px no tema escuro" width="300" />
 </p>
 
 > As capturas são geradas por `node scripts/capture-screenshots.mjs` com dados de CEP mockados, viewport fixo e `reducedMotion: reduce`.

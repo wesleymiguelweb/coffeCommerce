@@ -95,6 +95,13 @@ await page.getByRole('button', { name: 'Ativar tema claro' }).click()
 await settle()
 await capture('home-mobile-light.jpg', 375, 812)
 
+await page.getByRole('button', { name: 'Ativar tema escuro' }).click()
+await settle()
+await capture('home-mobile-dark.jpg', 375, 812)
+
+await page.getByRole('button', { name: 'Ativar tema claro' }).click()
+await settle()
+
 await page.setViewportSize({ width: 1280, height: 1500 })
 await page
   .getByRole('button', { name: 'Adicionar Expresso Tradicional ao carrinho' })
