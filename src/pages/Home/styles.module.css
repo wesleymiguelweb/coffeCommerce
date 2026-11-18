@@ -21,28 +21,29 @@
   z-index: 0;
   background:
     radial-gradient(
-      24rem 18rem at 70% 46%,
-      rgba(219, 172, 44, 0.15),
+      26rem 20rem at 70% 46%,
+      rgba(219, 172, 44, 0.22),
       transparent 70%
     ),
     radial-gradient(
-      18rem 15rem at 82% 30%,
-      rgba(128, 71, 248, 0.09),
+      20rem 17rem at 82% 30%,
+      rgba(128, 71, 248, 0.14),
       transparent 68%
     );
+  @apply animate-glow-breathe;
   pointer-events: none;
 }
 
 [data-theme='dark'] .hero::before {
   background:
     radial-gradient(
-      24rem 18rem at 70% 46%,
-      rgba(219, 172, 44, 0.08),
+      26rem 20rem at 70% 46%,
+      rgba(219, 172, 44, 0.13),
       transparent 70%
     ),
     radial-gradient(
-      18rem 15rem at 82% 30%,
-      rgba(128, 71, 248, 0.13),
+      20rem 17rem at 82% 30%,
+      rgba(128, 71, 248, 0.18),
       transparent 68%
     );
 }
@@ -139,6 +140,7 @@
 .heroImage {
   width: min(100%, 29.75rem);
   height: auto;
+  @apply drop-shadow-[0_18px_38px_rgba(219,172,44,0.18)];
 }
 
 /* ------------------------------------------------------------------ */
@@ -189,7 +191,7 @@
   font-weight: 700;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  @apply transition-[background-color,color,border-color,transform] duration-[140ms];
+  @apply transition-[background-color,color,border-color,transform,box-shadow] duration-[140ms];
 }
 
 .filter:hover {
@@ -203,6 +205,7 @@
   background: var(--purple-solid);
   border-color: var(--purple-solid);
   color: var(--on-purple-solid);
+  @apply shadow-glow-purple;
 }
 
 .grid {

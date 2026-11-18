@@ -178,6 +178,14 @@ Com os quadros oficiais de estilo e o próprio arquivo do Figma em mãos (18/11/
 - Cada módulo que tem efeito passou a usar `@reference ../../styles/index.css` e `@apply` para transições, hover, active, sombras e animações. Os keyframes (`fade-up`, `pop`, `fade-in`, `toast-in`, `spin`, `confetti-fall`) saíram dos módulos e vivem no `@theme`.
 - A intenção foi **trocar a implementação dos efeitos, não o visual**: os 19 testes E2E, os 124 testes unitários e as capturas foram revalidadas após a migração.
 
+**Lote 5 (glow e brilho — decisão do desenvolvedor 18/11/2026)**
+
+- Pedido explícito de **glow/brilho na interface**, aplicado ao hero e aos botões (escopo escolhido para não alterar os cards auditados).
+- Hero: halo quente/lavanda local reforçado e com animação `glow-breathe` (8 s), além de um `drop-shadow` âmbar suave atrás da ilustração.
+- Botões: tokens `--shadow-glow-purple`, `--shadow-glow-gold` e `--shadow-glow-soft` no `@theme`; glow no hover do carrinho, do botão de adicionar, do filtro ativo e das CTAs amarelas.
+- Brilho: sweep diagonal `shine` (900 ms) nas CTAs primárias (checkout, sucesso e estados vazios), via `::after` e `@apply animate-shine`.
+- `prefers-reduced-motion` continua neutralizando todas as animações. Este lote é uma adaptação documentada: o frame do Figma não traz glow nos botões.
+
 A auditoria foi feita **no próprio Figma view-only dentro do browser**, com zoom no canvas por rueda sintética — o MCP oficial do Figma não ficou disponível na sessão (o bloco `mcpServers` precisava virar `mcp.remote` no `opencode.json` e a sessão exigiria reabrir para os tools aparecerem; a URL fornecida abre em modo de visualização pública). As telas de Dark Mode e mobile do Figma não existem no arquivo — o dark mode segue a adaptação do projeto.
 
 Reversões conhecidas: trocar `--text-label` e a cor do CTA; remover os filtros do helper de a11y; reaplicar o gradiente areia de página inteira ou o anel tracejado nos cards; nenhuma mudança estrutural.

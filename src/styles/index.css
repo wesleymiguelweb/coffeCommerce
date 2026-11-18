@@ -17,6 +17,14 @@
   --shadow-elev-md: var(--shadow-md);
   --shadow-elev-lg: var(--shadow-lg);
   --shadow-elev-brand: var(--shadow-brand);
+  --shadow-glow-purple:
+    0 0 0 1px color-mix(in srgb, var(--purple) 38%, transparent),
+    0 10px 28px -10px color-mix(in srgb, var(--purple) 60%, transparent);
+  --shadow-glow-gold:
+    0 0 0 1px color-mix(in srgb, var(--yellow) 50%, transparent),
+    0 12px 32px -10px color-mix(in srgb, var(--yellow) 75%, transparent);
+  --shadow-glow-soft:
+    0 0 24px -8px color-mix(in srgb, var(--purple) 28%, transparent);
 
   --animate-fade-up: fade-up 420ms var(--ease-fluid) both;
   --animate-fade-up-card: fade-up 520ms var(--ease-fluid) both;
@@ -34,6 +42,8 @@
   --animate-spin-slow: spin 0.9s linear infinite;
   --animate-float: float 6s ease-in-out infinite;
   --animate-confetti: confetti-fall 2.4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  --animate-glow-breathe: glow-breathe 8s ease-in-out infinite;
+  --animate-shine: shine 900ms ease-out;
 
   @keyframes fade-up {
     from {
@@ -107,6 +117,25 @@
     100% {
       opacity: 0;
       transform: translate3d(0, 24rem, 0) rotate(540deg);
+    }
+  }
+
+  @keyframes glow-breathe {
+    0%,
+    100% {
+      opacity: 0.75;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes shine {
+    0% {
+      transform: translateX(-120%);
+    }
+    100% {
+      transform: translateX(120%);
     }
   }
 }

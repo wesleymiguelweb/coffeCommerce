@@ -241,6 +241,7 @@
 }
 
 .cta {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -256,13 +257,32 @@
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  overflow: hidden;
   @apply transition-[background-color,transform,box-shadow] duration-[140ms];
+}
+
+.cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.38) 50%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
 }
 
 .cta:hover {
   background: var(--yellow-dark);
   color: #ffffff;
-  @apply -translate-y-px shadow-elev-brand;
+  @apply -translate-y-px shadow-glow-gold;
+}
+
+.cta:hover::after {
+  @apply animate-shine;
 }
 
 .confetti {
